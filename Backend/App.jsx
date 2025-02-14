@@ -17,6 +17,8 @@ import ClientRegister from './components/ClientRegister';
 import AdminLogin from './components/AdminLogin';
 import ClientDashboard from './components/ClientDashboard';
 import AdminRegister from './components/AdminRegister';
+import ReactDOM from 'react-dom/client';
+import Dashboard from './Dashboard';
 
 function App() {
   return (
@@ -90,5 +92,8 @@ function App() {
     </Router>
   );
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Dashboard />);
 
 export default App;

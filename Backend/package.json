@@ -1,8 +1,16 @@
 {
+  "name": "hosting-kzn",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^6.4.4",
-    "@mui/material": "^6.4.4"
+    "@mui/material": "^5.x.x",
+    "@mui/icons-material": "^5.x.x",
+    "@emotion/react": "^11.x.x",
+    "@emotion/styled": "^11.x.x",
+    "react": "^18.x.x",
+    "react-dom": "^18.x.x"
   }
 }
