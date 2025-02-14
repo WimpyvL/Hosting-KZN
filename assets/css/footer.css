@@ -1,0 +1,153 @@
+.footer-section {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: #030303;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    position: relative;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.footer-branding {
+    text-align: center;
+    max-width: 200px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-branding p {
+    font-size: 0.9rem;
+    color: #030303;
+    word-wrap: break-word;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-nav h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #FF5722;
+    text-align: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav li {
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #030303;
+    transition: all 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+}
+
+.footer-nav a:hover {
+    background: rgba(228, 106, 7, 0.863);
+    box-shadow: 0px 4px 15px rgba(27, 27, 25, 0.6);
+    transform: scale(1.05);
+    border-radius: 8px;
+    color: white;
+}
+
+.footer-social {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #030303;
+    transition: all 0.3s;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.social-icon:hover {
+    background: rgba(228, 106, 7, 0.863);
+    box-shadow: 0px 4px 15px rgba(27, 27, 25, 0.6);
+    transform: scale(1.05);
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #030303;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    color: #FF5722;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-social {
+        position: static;
+        margin-top: 20px;
+    }
+    
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

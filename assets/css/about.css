@@ -1,0 +1,144 @@
+/* Hero Section */
+
+.about-hero {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/about-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-container h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-container p {
+    font-size: 1.8rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.2s;
+}
+
+
+/* Mission Vision Section */
+.mission-vision {
+    background: var(--bg-light-alt);
+    padding: 80px 0;
+}
+
+.mission-vision .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mission, .vision {
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.mission:hover, .vision:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.mission h2, .vision h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.mission h2:after, .vision h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* Company Story Section */
+.company-story {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.story-content h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.story-content h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.story-content p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-vision .container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-container p {
+        font-size: 1.4rem;
+    }
+}

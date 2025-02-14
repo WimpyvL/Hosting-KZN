@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hosting KZN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <input type="checkbox" id="service1" name="services[]" value="Web Development">
+            <img src="assets/images/KZN Logos (1).png" alt="Logo" class="logo-image" id="logo">
+            <button class="toggle-button" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="navbar" id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li>
+                        <a href="#">Services</a>
+                        <ul class="dropdown">
+                            <a href="web-design.html">Web Design</a>
+                            <a href="hosting.html">Hosting</a>
+                            <a href="cloud-services.html">Cloud Services</a>
+                            <a href="connectivity.html">Connectivity</a>
+                            <a href="email-automation.html">Email and Automation</a>
+                            <a href="fibre-prepaid.html">Fibre Prepaid Services</a>
+                            <a href="security-solutions.html">Security Solutions</a>
+                            <a href="vpn-services.html">VPN Services</a> <!-- New Link -->
+                            <a href="solar-solutions.html">Solar Solutions</a>                        
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact-info">
+            <h2>Reach Us On</h2>
+            <p>Get in touch with us today and let us help you with your technology needs</p>
+            <div>
+                <h3>ADDRESS</h3>
+                <p>28 Fascadale Heights, Marine Dr, Ramsgate, 4285</p>
+            </div>
+            <div>
+                <h3>TELEPHONE</h3>
+                <p>Office: 087 188 6697 / 087 153 2643</p>
+                <p>Mobile: 082 777 0331 / 082 318 6195</p>
+            </div>
+            <div>
+                <h3>E-MAIL</h3>
+                <p>info@hostingkzn.com</p>
+            </div>
+        </section>
+
+        <section id="map">
+            <h2>Our Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.9673080123224!2d30.8814445!3d-30.3432778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef6fb2b5d0d8b47%3A0x27e36d7f3a0d5c2a!2s485W%2BJQ%20Ramsgate%2C%20Margate!5e0!3m2!1sen!2sza!4v1689167545148!5m2!1sen!2sza" height="537" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <section id="contact-form">
+            <h2>Contact Us Today</h2>
+            <form action="submit_form.php" method="post" onsubmit="return validateForm()">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+               <div>
+                    <label for="contact-number">Contact Number:</label>
+                    <input type="tel" id="contact-number" name="contact-number" required>
+                </div>
+                <div>
+                    <label for="services">Select Services:</label>
+                    <div class="services-checkboxes">
+                        <label for="service1">
+                            <label for="service1">
+                                <input type="checkbox" id="service1" name="services[]" value="Web Development">
+                                Web Development
+                            </label>
+                            <label for="service2">
+                                <input type="checkbox" id="service2" name="services[]" value="App Development">
+                                App Development
+                            </label>
+                            <label for="service3">
+                                <input type="checkbox" id="service3" name="services[]" value="SEO Optimization">
+                                Fiber/LTE
+                            </label>
+                            <label for="service4">
+                                <input type="checkbox" id="service4" name="services[]" value="Security Solutions">
+                                Security Solutions
+                            </label>
+                            <label for="service5">
+                                <input type="checkbox" id="service5" name="services[]" value="Solar Solutions">
+                                Solar Solutions
+                            </label>
+                            <label for="service6">
+                                <input type="checkbox" id="service6" name="services[]" value="AI Integration">
+                                AI Integration
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                 <div class="g-recaptcha" data-sitekey="6LcvqsAqAAAAACMHaS7A_sLHZVSEaM5x626GVKLT"></div> 
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-branding">
+                    <img src="assets/images/KZN Logos (1).png" alt="Hosting KZN Logo" class="footer-logo">
+                    <p>Empowering your digital journey with reliable, secure, and innovative solutions.</p>
+                    <li><a href="Terms & Conditions.html">Terms & Conditions</a></li>
+                    <li><a href="Privacy Policy.html">Privacy Policy</a></li>
+                </div>
+                <div class="footer-nav">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="wizard.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>                    
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/hostingkzn.za" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Hosting KZN. All rights reserved. | Designed with <span class="heart">♥</span> by Hosting KZN Team</p>
+        </div>
+    </footer>
+    
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/metrics-animation.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </body>
+</html>

@@ -1,0 +1,285 @@
+/* Contact Page Layout */
+main {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+/* Contact Info Section */
+#contact-info {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+#contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+#contact-info h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+#contact-info h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+#contact-info > p {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+#contact-info div {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+#contact-info div:hover {
+    background: rgba(255, 87, 34, 0.1);
+}
+
+#contact-info h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+}
+
+#contact-info h3:before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+#contact-info div:nth-child(3) h3:before { content: '\f3c5'; } /* Address */
+#contact-info div:nth-child(4) h3:before { content: '\f095'; } /* Phone */
+#contact-info div:nth-child(5) h3:before { content: '\f0e0'; } /* Email */
+#contact-info div:nth-child(6) h3:before { content: '\f1e0'; } /* Social */
+
+#contact-info p {
+    color: var(--text-color);
+    margin: 5px 0;
+    padding-left: 28px;
+}
+
+/* Map Section */
+#map {
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+#map:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+#map h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+#map h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+#map iframe {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Contact Form */
+#contact-form {
+    grid-column: span 2;
+    background: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: var(--spacing-md);
+}
+
+#contact-form h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+#contact-form h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+#contact-form form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
+    outline: none;
+}
+ 
+ #contact-form input[type="tel"] {
+     width: 100%;
+     padding: 12px;
+     margin-bottom: 20px;
+     border: 1px solid #ddd;
+     border-radius: var(--border-radius);
+     transition: var(--transition);
+ }
+ 
+ #contact-form input[type="tel"]:focus {
+     border-color: var(--primary-color);
+     box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
+     outline: none;
+ }
+ 
+
+.services-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.services-checkboxes label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.services-checkboxes label:hover {
+    background: rgba(255, 87, 34, 0.1);
+}
+
+.services-checkboxes input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+#contact-form button {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: block;
+    margin: 30px auto 0;
+}
+
+#contact-form button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.g-recaptcha {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    #contact-form {
+        grid-column: 1;
+    }
+
+    .services-checkboxes {
+        grid-template-columns: 1fr;
+    }
+
+    #contact-info h2,
+    #map h2,
+    #contact-form h2 {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 480px) {
+  #contact-info h2,
+  #map h2,
+  #contact-form h2 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,42 @@
+/* Neumorphic Slime Effect Styles */
+body {
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.neumorphic {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px #b8b8b8,
+                -8px -8px 20px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slime {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #a8e6cf, #dcedc1);
+    border-radius: 20px;
+    animation: slimeAnimation 3s infinite;
+}
+
+@keyframes slimeAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
