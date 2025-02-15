@@ -61,11 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 otherDropdown.classList.remove('show');
                             }
                         }
-                    });
-                    
+                    });                  
                     // Toggle current dropdown
-                    dropdown.classList.toggle('show');
-                    
+                    dropdown.classList.toggle('show');                    
                     // Update arrow icon
                     const arrow = link.querySelector('.arrow');
                     if (arrow) {
@@ -114,24 +112,26 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const metrics = document.querySelectorAll('.metric-number');
     
-    const animateMetric = (metric, target) => {
-        let current = 0;
-        const increment = target / 100;
-        const duration = 2000; // 2 seconds
-        const steps = 100;
-        const stepTime = duration / steps;
+    const animateMetric = (metric, target, delay = 500) => { // Default delay to 500ms
+        setTimeout(() => {
+            let current = 0;
+            const increment = target / 100;
+            const duration = 2000; // 2 seconds
+            const steps = 100;
+            const stepTime = duration / steps;
 
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                metric.textContent = Math.ceil(current);
-                setTimeout(updateCounter, stepTime);
-            } else {
-                metric.textContent = target;
-            }
-        };
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    metric.textContent = Math.ceil(current);
+                    setTimeout(updateCounter, stepTime);
+                } else {
+                    metric.textContent = target;
+                }
+            };
 
-        updateCounter();
+            updateCounter();
+        }, delay); // Apply the delay before starting the animation
     };
 
     const observerCallback = (entries, observer) => {
@@ -162,7 +162,7 @@ function validateForm() {
     return true;
 }
 document.addEventListener('DOMContentLoaded', function() {
-    const element = document.querySelector('your-selector'); // Replace with actual selector
+    const element = document.querySelector('#your-element'); 
     if (element) {
         // Access parentElement here
         element.parentElement.doSomething();
