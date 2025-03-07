@@ -1,33 +1,34 @@
 <?php
+require_once 'config/db_config.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Process form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-
-    // Retrieve the services from the form
+    $name = htmlspecialchars($_POST['name']);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $message = htmlspecialchars($_POST['message']);
     $services = isset($_POST['services']) ? $_POST['services'] : [];
-    
-    // Build a formatted string of selected services
-    $servicesBody = "";
-    if (!empty($services)) {
-        foreach ($services as $service) {
-            $servicesBody .= "- " . $service . "\n";
-        }
-    } else {
-        $servicesBody = "No services selected.";
-    }
-    
-    $to = "info@hostingkzn.com"; 
-    $subject = "New Form Submission from $name";
-    $body = "Name: $name\nEmail: $email\nMessage: $message\nSelected Services:\n$servicesBody";
-    $headers = "From: $email\r\nReply-To: $email";
+    $servicesJson = json_encode($services);
 
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Thank you for your message, $name!";
-    } else {
-        error_log("Email failed to send to $to. Subject: $subject. Body: $body");
-        echo "There was a problem sending your message. Please try again later.";
+    try {
+        // Insert form data into database
+        $stmt = $pdo->prepare("INSERT INTO form_submissions (name, email, message, services) VALUES (:name, :email, :message, :services)");
+        $stmt->execute([
+            ':name' => $name,
+            ':email' => $email,
+            ':message' => $message,
+            ':services' => $servicesJson
+        ]);
+
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'Thank you for your message, ' . $name . '!'
+        ]);
+    } catch (PDOException $e) {
+        error_log("Database error: " . $e->getMessage());
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'There was a problem saving your message. Please try again later.'
+        ]);
     }
 }
 ?>
