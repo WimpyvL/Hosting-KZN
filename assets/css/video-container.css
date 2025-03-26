@@ -1,0 +1,52 @@
+/* Video Container Styles */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Default height for desktop */
+    overflow: hidden; /* Prevent content from spilling outside */
+    margin-top: 0;
+    padding-top: 0;
+    box-sizing: border-box; /* Include padding and border in element's width and height */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    background-color: #000; /* Background color to fill empty space */
+    filter: brightness(1.05) contrast(1.05); /* Slightly enhance video appearance */
+    will-change: opacity; /* Optimize for animations */
+    backface-visibility: hidden; /* Prevent flickering */
+    transform: translateZ(0); /* Force hardware acceleration */
+    max-width: 100%; /* Ensure video doesn't exceed container width */
+    max-height: 100%; /* Ensure video doesn't exceed container height */
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 1024px) {
+    .video-container {
+        height: 55vh; /* Slightly reduced height for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        height: 45vh; /* Reduced height for larger mobile devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        height: 40vh; /* Further reduced height for smaller mobile devices */
+    }
+    
+    .video-container video {
+        object-position: center; /* Ensure video is centered on smaller screens */
+    }
+}
+
+@media (max-width: 320px) {
+    .video-container {
+        height: 35vh; /* Minimum height for very small devices */
+    }
+}

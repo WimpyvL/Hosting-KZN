@@ -1,4 +1,6 @@
+
 // Navigation menu toggle
+
 function toggleMenu() {
     const nav = document.querySelector('nav');
     const navbar = document.getElementById('navbar');
@@ -151,16 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
     metrics.forEach(metric => observer.observe(metric));
 });
 
-
-
-function validateForm() {
-     var response = grecaptcha.getResponse();
-     if (response.length === 0) {
-       alert('Please verify you are human!');
-       return false;
-     }
-    return true;
-}
 document.addEventListener('DOMContentLoaded', function() {
     const element = document.querySelector('your-selector'); // Replace with actual selector
     if (element) {
